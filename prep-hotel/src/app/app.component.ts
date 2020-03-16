@@ -32,8 +32,8 @@ export class AppComponent {
     this.listaStanze = new Array <Stanza>();
     this.oStanza = this.http.get<Stanza[]>("https://my-json-server.typicode.com/malizia-g/hotel/booking");
     this.oStanza.subscribe(this.getStanza);
-
-  onClic(f: HTMLInputElement  ,t : HTMLInputElement, n :HTMLInputElement,  s :HTMLInputElement ) : boolean
+  }
+  onClick(f: HTMLInputElement  ,t : HTMLInputElement, n :HTMLInputElement,  s :HTMLInputElement ) : boolean
   {
     this.selectedStanza = ListaPrenotazione.find((prenotazione: Prenotazione) => prenotazione.name == this.selectedOption);
     this.listaStanze.push(new Stanza(this.selectedStanza, new Date(f.value),new Date(t.value), String(n.value), s.value));
